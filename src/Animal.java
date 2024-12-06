@@ -1,16 +1,16 @@
-public class Animal implements Noisy {
-    private String name;
+public abstract class Animal implements Noisy{
 
-    public Animal(String name) {
+    protected String name;
+
+    public Animal(String name){
         this.name = name;
     }
 
-    public void makeSound() {
-        System.out.println(name + " издаёт звук!");
+    protected void whoAmI(){
+        System.out.print(name.toUpperCase() + ": " );
     }
-
-    @Override
-    public String toString() {
-        return name;
+    protected void out(String smth){
+        whoAmI();
+        System.out.println(smth);
     }
 }

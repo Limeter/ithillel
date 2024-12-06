@@ -1,33 +1,20 @@
 public class AnimalsDemo {
-    public static void main(String[] args) {
-        FlexibleZoo flexibleZoo = new FlexibleZoo();
 
-        System.out.println("Добавляем животных в FlexibleZoo...");
-        flexibleZoo.addAnimal(new Animal("Лев"));
-        flexibleZoo.addAnimal(new Animal("Тигр"));
-        flexibleZoo.addAnimal(new Animal("Медведь"));
+    public static void main(String... args) {
+        Zoo zoo = buildZoo();
+        System.out.println(zoo.addAnimal(new Cat("Simon")));
+        System.out.println(zoo.addAnimal(new Dog("Patron")));
+        System.out.println(zoo.addAnimal(new Cat("Matilda")));
+        System.out.println(zoo.addAnimal(new Cat("Tom")));
 
-        System.out.println("FlexibleZoo издает звуки:");
-        flexibleZoo.makeNoise();
+        LinkedZoo linkedZoo = (LinkedZoo) zoo;
+        linkedZoo.makeSound(2);
 
-        System.out.println("Выпускаем животное из FlexibleZoo (индекс 1):");
-        flexibleZoo.freeAnimal(1);
+        linkedZoo.makeLastAnimalFree();
+        linkedZoo.makeNoise();
+    }
 
-        System.out.println("FlexibleZoo издает звуки после выпуска:");
-        flexibleZoo.makeNoise();
-
-        CriticallySmallZoo criticallySmallZoo = new CriticallySmallZoo();
-
-        System.out.println("Добавляем животное в CriticallySmallZoo...");
-        criticallySmallZoo.addAnimal(new Animal("Панда"));
-
-        System.out.println("CriticallySmallZoo издает звуки:");
-        criticallySmallZoo.makeNoise();
-
-        System.out.println("Выпускаем животное из CriticallySmallZoo:");
-        criticallySmallZoo.freeAnimal(0);
-
-        System.out.println("CriticallySmallZoo издает звуки после выпуска:");
-        criticallySmallZoo.makeNoise();
+    public static Zoo buildZoo() {
+        return new LinkedZoo();
     }
 }
