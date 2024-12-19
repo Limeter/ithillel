@@ -4,7 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d31e8ef3-3836-4100-b812-32c5856843b5" name="Changes" comment="Homework" />
+    <list default="true" id="d31e8ef3-3836-4100-b812-32c5856843b5" name="Changes" comment="Homework">
+      <change beforePath="$PROJECT_DIR$/src/Store.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/StringStore.java" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -46,10 +49,23 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.ShipCollections">
+  <component name="RunManager" selected="Application.AnimalsFile">
     <configuration name="AnimalsDemo" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="old.AnimalsDemo" />
       <module name="Hilei" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="AnimalsFile" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="homework12.AnimalsFile" />
+      <module name="Hilei" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="homework12.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -62,7 +78,7 @@
       </method>
     </configuration>
     <configuration name="ShipCollections" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="ShipCollections" />
+      <option name="MAIN_CLASS_NAME" value="homework13.ShipCollections" />
       <module name="Hilei" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -77,6 +93,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.AnimalsFile" />
         <item itemvalue="Application.ShipCollections" />
         <item itemvalue="Application.StringStore" />
         <item itemvalue="Application.Main" />
