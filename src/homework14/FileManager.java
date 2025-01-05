@@ -31,13 +31,13 @@ public class FileManager {
         System.out.println("Введите имя файла для просмотра:");
         String fileName = scanner.nextLine();
 
-        try {
-            String content = Files.readString(Path.of("src/homework14/" + fileName));
-            System.out.println("Содержимое файла:");
-            System.out.println(content);
-        } catch (IOException e) {
-            System.out.println("Ошибка чтения файла:" + e.getMessage());
-        }
+       //try {
+       //    //String content = Files.readString(Path.of("src/homework14/" + fileName));
+       //    System.out.println("Содержимое файла:");
+       //    //System.out.println(content);
+       //} catch (IOException e) {
+       //    System.out.println("Ошибка чтения файла:" + e.getMessage());
+       //}
     }
 
     // Добавлено. Если файл не существует, то автоматически создаёт новый файл. Если это не противоречит указаний из домашнего задания
@@ -56,18 +56,18 @@ public class FileManager {
         System.out.println("Введите имя файла для сохранения:");
         String fileName = scanner.nextLine();
 
-        try {
-            File file = new File("src/homework14/" + fileName);
-            if (file.createNewFile()) {
-                System.out.println("Файл создан: " + fileName);
-            } else {
-                System.out.println("Файл уже существует. Перезапись...");
-            }
-            Files.writeString(Path.of("src/homework14/" + fileName), content.toString());
-            System.out.println("Файл успешно сохранен.");
-        } catch (IOException e) {
-            System.out.println("Ошибка записи в файл: " + e.getMessage());
-        }
+        //try {
+        //    File file = new File("src/homework14/" + fileName);
+        //    if (file.createNewFile()) {
+        //        System.out.println("Файл создан: " + fileName);
+        //    } else {
+        //        System.out.println("Файл уже существует. Перезапись...");
+        //    }
+        //    Files.writeString(Path.of("src/homework14/" + fileName), content.toString());
+        //    System.out.println("Файл успешно сохранен.");
+        //} catch (IOException e) {
+        //    System.out.println("Ошибка записи в файл: " + e.getMessage());
+        //}
     }
 
     private static void copyFile(Scanner scanner) {
@@ -77,11 +77,11 @@ public class FileManager {
         System.out.println("Enter the destination file name:");
         String destinationFile = scanner.nextLine();
 
-        try {
-            Files.copy(Path.of("src/homework14/" + sourceFile), Path.of("src/homework14/" + destinationFile), StandardCopyOption.REPLACE_EXISTING);
-            System.out.println("File copied successfully.");
-        } catch (IOException e) {
-            System.out.println("Error copying the file: " + e.getMessage());
-        }
+        //try {
+        //    //Files.copy(Path.of("src/homework14/" + sourceFile), Path.of("src/homework14/" + destinationFile), StandardCopyOption.REPLACE_EXISTING);
+        //    System.out.println("File copied successfully.");
+        //} catch (IOException e) {
+        //    System.out.println("Error copying the file: " + e.getMessage());
+        //}
     }
 }
