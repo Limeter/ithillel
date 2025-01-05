@@ -13,9 +13,8 @@ public class Person {
     private String name;
     private int age;
 
-    // Конструктор, геттеры и сеттеры
-    public Person() {}
-
+    public Person() {
+    }
     public Person(String name, int age) {
         this.name = name;
         this.age = age;
@@ -71,10 +70,7 @@ class PersonStorage {
     }
 
     public void findPerson(String name) {
-        Person foundPerson = persons.stream()
-                .filter(person -> person.getName().equalsIgnoreCase(name))
-                .findFirst()
-                .orElse(null);
+        Person foundPerson = persons.stream().filter(person -> person.getName().equalsIgnoreCase(name)).findFirst().orElse(null);
         if (foundPerson != null) {
             System.out.println(foundPerson);
         } else {
@@ -101,7 +97,8 @@ class Main {
         try {
             File file = new File(FILE_NAME);
             if (file.exists()) {
-                List<Person> persons = objectMapper.readValue(file, new TypeReference<List<Person>>() {});
+                List<Person> persons = objectMapper.readValue(file, new TypeReference<List<Person>>() {
+                });
                 personStorage.setPersons(persons);
             }
         } catch (IOException e) {
