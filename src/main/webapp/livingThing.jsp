@@ -1,3 +1,4 @@
+<%@ page import="java.util.List" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -31,6 +32,8 @@
     <h1><%= livingThing.substring(0, 1).toUpperCase() + livingThing.substring(1) %></h1>
     <img src="<%= imageUrl %>" alt="<%= livingThing %>" width="640" height="640">
     <p><%= description %></p>
-    <a href="/castle-1.0/castle">Back to the castle</a>
+    <a href="/castle-1.0/castle">Back to the Castle</a>
+    <br>
+    <a href="index.jsp">Back to Main Page</a>
 </body>
 </html>
