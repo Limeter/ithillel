@@ -15,6 +15,7 @@ public class AnimalStorage {
         }
     }
 
+    @SuppressWarnings("unchecked")
     public static List<String> loadAnimals() {
         File file = new File(FILE_NAME);
         if (!file.exists()) {
@@ -29,3 +30,4 @@ public class AnimalStorage {
         return new ArrayList<>();
     }
 }
+

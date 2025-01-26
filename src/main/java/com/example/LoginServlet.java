@@ -8,8 +8,8 @@ import java.io.IOException;
 
 @WebServlet("/login")
 public class LoginServlet extends HttpServlet {
-    private static final String CORRECT_USERNAME = "User";  // Измените на ваше имя
-    private static final String CORRECT_PASSWORD = "12345";  // Измените на ваш пароль
+    private static final String CORRECT_USERNAME = "User";
+    private static final String CORRECT_PASSWORD = "12345";
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -17,11 +17,9 @@ public class LoginServlet extends HttpServlet {
         String password = request.getParameter("password");
 
         if (CORRECT_USERNAME.equals(username) && CORRECT_PASSWORD.equals(password)) {
-            // Успешный логин
             request.getSession().setAttribute("user", username);
             response.sendRedirect("/castle-1.0/castle");
         } else {
-            // Неверный логин или пароль
             response.sendRedirect("/castle-1.0/login?error=true");
         }
     }

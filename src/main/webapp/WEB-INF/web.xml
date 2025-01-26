@@ -16,12 +16,12 @@
         <url-pattern>/logout</url-pattern>
     </servlet-mapping>
     <servlet>
-        <servlet-name>AddAnimalServlet</servlet-name>
-        <servlet-class>com.example.AddAnimalServlet</servlet-class>
+        <servlet-name>RemoveAnimalServlet</servlet-name>
+        <servlet-class>com.example.RemoveAnimalServlet</servlet-class>
     </servlet>
     <servlet-mapping>
-        <servlet-name>AddAnimalServlet</servlet-name>
-        <url-pattern>/addAnimal</url-pattern>
+        <servlet-name>RemoveAnimalServlet</servlet-name>
+        <url-pattern>/removeAnimal</url-pattern>
     </servlet-mapping>
     <filter>
         <filter-name>AuthorizationFilter</filter-name>
