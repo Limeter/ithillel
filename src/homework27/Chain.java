@@ -24,7 +24,7 @@ public class Chain {
         System.out.println("Вход: |" + inputMin + "|");
         System.out.println("Обработано: |" + resultMin + "|");
         System.out.println("");
-        
+
         // Демонстрация работоспособности
         String inputDefault = "   Hello World!   ";
         String resultDefault = minLengthFilter.process(inputDefault);
