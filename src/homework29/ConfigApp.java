@@ -1,16 +1,17 @@
 package homework29;
+
 import com.mongodb.client.MongoClient;
 import com.mongodb.client.MongoClients;
 import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoDatabase;
 import org.bson.Document;
-import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.stereotype.Service;
+
 @Configuration
-@ComponentScan("homework30")
+@ComponentScan("homework29")
 public class ConfigApp {
     @Bean
     public MongoClient mongoClient() {
@@ -24,8 +25,8 @@ public class ConfigApp {
 }
 
 class Article {
-    private String title;
-    private String text;
+    private final String title;
+    private final String text;
 
     public Article(String title, String text) {
         this.title = title;

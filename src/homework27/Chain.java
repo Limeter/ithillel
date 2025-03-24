@@ -15,7 +15,7 @@ public class Chain {
 
         System.out.println("Вход: |" + inputMax + "|");
         System.out.println("Обработано: |" + resultMax + "|");
-        System.out.println("");
+        System.out.println();
 
         // Демонстрация превышенного лимита минимальных символов
         String inputMin = "   Hi!   ";
@@ -23,7 +23,7 @@ public class Chain {
 
         System.out.println("Вход: |" + inputMin + "|");
         System.out.println("Обработано: |" + resultMin + "|");
-        System.out.println("");
+        System.out.println();
 
         // Демонстрация работоспособности
         String inputDefault = "   Hello World!   ";

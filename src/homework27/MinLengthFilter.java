@@ -1,4 +1,5 @@
 package homework27;
+
 class MinLengthFilter extends BaseStringFilter {
     private final int minLength;
 

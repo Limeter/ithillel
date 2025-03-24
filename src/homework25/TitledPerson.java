@@ -1,7 +1,7 @@
 package homework25;
 
 public class TitledPerson extends Person {
-    private String title;
+    private final String title;
 
     public TitledPerson(Person person, String title) {
         super(person.firstName, person.lastName);

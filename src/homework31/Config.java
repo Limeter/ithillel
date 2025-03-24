@@ -1,17 +1,14 @@
-package homework30;
+package homework31;
 
 import com.mongodb.client.*;
 import com.mongodb.client.model.Filters;
-import com.mongodb.client.model.Updates;
 import org.bson.Document;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
-import org.springframework.context.annotation.Configuration;
 import org.springframework.stereotype.Service;
 
-@Configuration
 @ComponentScan("homework30")
-public class AppConfig {
+public class Config {
     @Bean
     public MongoClient mongoClient() {
         return MongoClients.create("mongodb://localhost:27017");
@@ -23,15 +20,17 @@ public class AppConfig {
     }
 }
 
-class Articl {
+class Article {
     private final String title;
     private final String text;
     private final boolean isPublished;
+    private final String authorID;
 
-    public Articl(String title, String text) {
+    public Article(String title, String text, String authorID) {
         this.title = title;
         this.text = text;
         this.isPublished = false;
+        this.authorID = authorID;
     }
 
     public String getTitle() {
@@ -46,10 +45,15 @@ class Articl {
         return isPublished;
     }
 
+    public String getAuthorID() {
+        return authorID;
+    }
+
     public Document toDocument() {
         return new Document("title", title)
                 .append("text", text)
-                .append("isPublished", isPublished);
+                .append("isPublished", isPublished)
+                .append("authorID", authorID);
     }
 }
 
@@ -61,33 +65,24 @@ class DaoArticle {
         this.articleCollection = database.getCollection("articles");
     }
 
-    public void saveArticle(Articl article) {
+    public void saveArticle(Article article) {
         articleCollection.insertOne(article.toDocument());
         System.out.println("Article saved: " + article.getTitle());
     }
 
-    public void findByTitle(String title) {
-        FindIterable<Document> articles = articleCollection.find(Filters.eq("title", title));
+    public void findByAuthor(String authorID) {
+        FindIterable<Document> articles = articleCollection.find(Filters.eq("authorID", authorID));
         for (Document doc : articles) {
-            System.out.println(doc.toJson());
+            System.out.println(doc.toString());
         }
     }
 
-    public void findPublishedByTitle(String title) {
+    public void findPublishedByAuthor(String authorID) {
         FindIterable<Document> articles = articleCollection.find(
-                Filters.and(Filters.eq("title", title), Filters.eq("isPublished", true))
+                Filters.and(Filters.eq("authorID", authorID), Filters.eq("isPublished", true))
         );
         for (Document doc : articles) {
-            System.out.println(doc.toJson());
+            System.out.println(doc.toString());
         }
-    }
-
-    public void publishArticle(String title) {
-        articleCollection.updateOne(
-                Filters.eq("title", title),
-                Updates.set("isPublished", true)
-        );
-        System.out.println("Article '" + title + "' has been published.");
     }
 }
-

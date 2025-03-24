@@ -4,7 +4,8 @@ public class CafeSingleton {
     private static CafeSingleton instance;
     private int count = 0;
 
-    private CafeSingleton() {}
+    private CafeSingleton() {
+    }
 
     public static CafeSingleton getInstance() {
         if (instance == null) {
